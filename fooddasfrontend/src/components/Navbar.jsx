@@ -47,7 +47,7 @@ const Navbar = () => {
             }
           >
             <div className="flex items-center justify-between w-full text-red-500">
-              <img src="./logo.png" height={100} width={100} alt="pic" />
+              <img src={logo} height={100} width={100} alt="pic" />
 
               <div onClick={() => setNav(false)} className="cursor-pointer p-3">
                 <FaTimes size={30} />
