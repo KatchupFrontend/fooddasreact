@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import hero from '../assets/hero.png'
 
 const Hero = () => {
@@ -11,7 +12,8 @@ const Hero = () => {
               <div class="lg:w-4/5 mx-auto flex flex-wrap">
                 <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
                   <h1 class="text-black text-5xl title-bold font-bold mb-4">
-                    The fastest delivery in <span className="text-red-500">your city</span>
+                    The fastest delivery in{" "}
+                    <span className="text-red-500">your city</span>
                   </h1>
 
                   <p class="leading-relaxed mb-4 text-gray-700">
@@ -26,11 +28,11 @@ const Hero = () => {
                       placeholder="Enter delivery address"
                     />
                     <button class="flex  text-white bg-red-500 border-0 py-2 px-6  focus:outline-red-500 hover:bg-red-600 ">
-                      Find Food
+                      <Link to={"/customer"}> Find Food</Link>
                     </button>
                   </div>
                 </div>
-                <div className='ml-10'>
+                <div className="ml-10">
                   <img
                     alt="ecommerce"
                     class=""

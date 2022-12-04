@@ -1,5 +1,7 @@
 import React from 'react'
 import store from '../assets/storefront.svg'
+import scooter from '../assets/scoot.svg'
+import app from '../assets/iphone.svg'
 
 const Services = () => {
     const ourservices = [
@@ -7,11 +9,11 @@ const Services = () => {
             id: 1,
             title: 'Fastest Delivery',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            icon: store,
+            icon: scooter,
         },
         {
             id: 2,
-            title: 'A Good Auto Responder',
+            title: 'Best Quality',
 
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
             icon: store
@@ -19,9 +21,9 @@ const Services = () => {
         {
 
             id: 3,
-            title: 'Home Delivery',
+            title: 'Download App',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            icon: store
+            icon: app
         }
 
     ]
