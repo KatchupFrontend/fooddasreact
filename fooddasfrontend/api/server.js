@@ -4,7 +4,6 @@ const mongoose=require('mongoose')
 dotenv.config()
 const app=express()
 const userRoute=require('./routes/userRoutes')
-const PORT=process.env.PORT
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -22,8 +21,3 @@ mongoose
     .catch((err) => console.log(err.message));
 app.use('/api',userRoute)
 
-// app.get('/api',(req,res)=>{
-//     res.send(`API`)
-// })
-
-// app.listen(PORT,console.log(`server is listening on port http://localhost:${PORT}`))
