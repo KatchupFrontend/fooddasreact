@@ -31,7 +31,7 @@ router.post('/login',async(req,res,next)=>{
     try {
         const {email,password}=req.body
         if(!email||!password){
-            res.send(`please fill in the required fields`)
+            res.status(404).send(`please fill in the required fields`)
         }
             const user=await User.findOne({email})
             if(!user){

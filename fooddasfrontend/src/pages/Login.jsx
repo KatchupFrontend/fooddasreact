@@ -1,7 +1,30 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 const Login = () => {
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+  const logUser=async(e)=>{
+    e.preventDefault()
+    try {
+      axios.post('http://localhost:7070/api/login',{
+        email,
+        password
+      }).then(res=>{
+        console.log(res);
+         if(res.status===200){
+          alert("logged in")
+        }else{
+          alert('somn went wrong')
+        }
+      }
+      )
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
   return (
     <div>
       <div className="h-full  w-full py-[80px] px-4 back">
@@ -26,7 +49,7 @@ const Login = () => {
             </p>
            
 
-            <form >
+            <form onSubmit={logUser}>
               <div className="mt-10 pt-5">
                 <label htmlFor="email" className="">
                   Email
@@ -35,6 +58,9 @@ const Login = () => {
                 <input
                   type="email"
                   className="bg-gray-200 border rounded  text-md font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  value={email}
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                  
                   autoFocus
@@ -47,9 +73,11 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                 
                   className="bg-gray-200 border rounded  text-md font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
                   id="password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                   autoFocus
                 ></input>
                
